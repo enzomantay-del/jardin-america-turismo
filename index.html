@@ -1,0 +1,3096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turismo en Jardín América, Misiones, Argentina. Descubrí los Saltos del Tabay, la selva misionera y los principales atractivos de la provincia.">
+    <meta name="theme-color" content="#1B4332">
+    <title>Jardín América Turismo | Misiones, Argentina</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           RESET & VARIABLES
+        ============================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --c-primary:       #1B4332;
+            --c-primary-light: #2D6A4F;
+            --c-primary-dark:  #0D2818;
+            --c-accent:        #F4A261;
+            --c-accent-dark:   #E76F51;
+            --c-white:         #FFFFFF;
+            --c-offwhite:      #F5F7F2;
+            --c-text:          #1A1A1A;
+            --c-text-light:    #4A4A4A;
+            --c-text-muted:    #6B7280;
+            --c-border:        #D4D9CC;
+
+            --f-heading: 'Montserrat', sans-serif;
+            --f-body:    'Open Sans', sans-serif;
+
+            --shadow-sm: 0 1px 4px rgba(0,0,0,.09);
+            --shadow-md: 0 4px 16px rgba(0,0,0,.13);
+            --shadow-lg: 0 10px 36px rgba(0,0,0,.18);
+
+            --r-sm: 8px;
+            --r-md: 16px;
+            --r-lg: 24px;
+
+            --ease: .3s ease;
+            --nav-h: 70px;
+        }
+
+        /* =============================================
+           BASE
+        ============================================= */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        body {
+            font-family: var(--f-body);
+            color: var(--c-text);
+            background: var(--c-white);
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* =============================================
+           ACCESIBILIDAD: SKIP LINK
+        ============================================= */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            z-index: 9999;
+            background: var(--c-primary-dark);
+            color: var(--c-white);
+            padding: 14px 28px;
+            font-family: var(--f-heading);
+            font-weight: 700;
+            font-size: .95rem;
+            border-radius: 0 0 var(--r-sm) 0;
+            transition: top var(--ease);
+        }
+        .skip-link:focus { top: 0; }
+
+        /* FOCUS GLOBAL */
+        :focus-visible {
+            outline: 3px solid var(--c-accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* SCREEN READER ONLY */
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* =============================================
+           NAVBAR
+        ============================================= */
+        .navbar {
+            position: fixed;
+            inset: 0 0 auto 0;
+            height: var(--nav-h);
+            background: rgba(27,67,50,.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            transition: background var(--ease), box-shadow var(--ease);
+        }
+        .navbar.scrolled {
+            background: rgba(13,40,24,.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            color: var(--c-white);
+            font-family: var(--f-heading);
+            font-weight: 700;
+            font-size: 1.05rem;
+            line-height: 1.2;
+        }
+        .nav-logo span {
+            display: block;
+            font-size: .7rem;
+            font-weight: 400;
+            opacity: .75;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .nav-logo-icon {
+            width: 40px; height: 40px;
+            background: var(--c-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: .25rem;
+            align-items: center;
+        }
+        .nav-link {
+            color: rgba(255,255,255,.88);
+            font-family: var(--f-heading);
+            font-size: .875rem;
+            font-weight: 600;
+            padding: .5rem 1rem;
+            border-radius: var(--r-sm);
+            transition: color var(--ease), background var(--ease);
+            letter-spacing: .02em;
+        }
+        .nav-link:hover, .nav-link:focus {
+            color: var(--c-white);
+            background: rgba(255,255,255,.14);
+        }
+        .nav-link[aria-current="page"] { color: var(--c-accent); }
+
+        /* Hamburger */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            padding: .5rem;
+            cursor: pointer;
+            color: var(--c-white);
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px; height: 2px;
+            background: var(--c-white);
+            border-radius: 2px;
+            transition: transform var(--ease), opacity var(--ease);
+        }
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: var(--nav-h); left: 0; right: 0;
+                background: var(--c-primary-dark);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: .4rem;
+                transform: translateY(-110%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform var(--ease), opacity var(--ease);
+            }
+            .nav-menu.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            .nav-link {
+                display: block;
+                text-align: center;
+                padding: .9rem 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* =============================================
+           HERO
+        ============================================= */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-h) + 2rem) 1.5rem 4rem;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(13,40,24,.55) 0%,
+                    rgba(13,40,24,.25) 50%,
+                    rgba(13,40,24,.72) 100%
+                ),
+                url('img/tabay-hero.jpg')
+                center / cover no-repeat;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(244,162,97,.18);
+            border: 1px solid var(--c-accent);
+            color: var(--c-accent);
+            font-family: var(--f-heading);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            padding: .4rem 1.3rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: var(--f-heading);
+            font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+            font-weight: 800;
+            color: var(--c-white);
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 24px rgba(0,0,0,.3);
+        }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--c-accent);
+        }
+        .hero-desc {
+            font-size: clamp(.95rem, 2vw, 1.15rem);
+            color: rgba(255,255,255,.9);
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .85rem 2rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-size: .9rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: transform var(--ease), box-shadow var(--ease), background var(--ease), color var(--ease);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,.24); }
+        .btn:active { transform: translateY(0); }
+
+        .btn-primary { background: var(--c-accent); color: var(--c-primary-dark); }
+        .btn-primary:hover { background: var(--c-accent-dark); color: var(--c-white); }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--c-white);
+            border: 2px solid rgba(255,255,255,.55);
+        }
+        .btn-outline:hover { background: rgba(255,255,255,.14); border-color: var(--c-white); }
+
+        /* HERO STATS */
+        .hero-stats {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            background: rgba(255,255,255,.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: var(--r-md);
+            padding: 1rem 1.5rem;
+            text-align: center;
+            color: var(--c-white);
+            min-width: 130px;
+        }
+        .hero-stat strong {
+            display: block;
+            font-family: var(--f-heading);
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--c-accent);
+            line-height: 1;
+        }
+        .hero-stat span {
+            font-size: .78rem;
+            opacity: .82;
+            margin-top: .25rem;
+            display: block;
+        }
+
+        /* =============================================
+           SECTION BASE
+        ============================================= */
+        section { padding: 5rem 0; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .section-badge {
+            display: inline-block;
+            background: var(--c-primary);
+            color: var(--c-white);
+            font-family: var(--f-heading);
+            font-size: .73rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            padding: .4rem 1.2rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: var(--f-heading);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--c-primary-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--c-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* =============================================
+           SECCIÓN INICIO
+        ============================================= */
+        #inicio { background: var(--c-offwhite); }
+
+        /* Cómo llegar */
+        .como-llegar {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .como-llegar { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        .como-llegar-info h2 {
+            font-family: var(--f-heading);
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 800;
+            color: var(--c-primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .transporte-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .transporte-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--c-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .transporte-body h3 {
+            font-family: var(--f-heading);
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--c-primary-dark);
+            margin-bottom: .3rem;
+        }
+        .transporte-body p {
+            font-size: .88rem;
+            color: var(--c-text-light);
+            line-height: 1.7;
+        }
+
+        /* Mapa */
+        .mapa-wrap {
+            border-radius: var(--r-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--c-border);
+            position: relative;
+        }
+        .mapa-wrap p {
+            text-align: center;
+            font-size: .78rem;
+            color: var(--c-text-muted);
+            padding: .5rem;
+            background: var(--c-white);
+        }
+        .mapa-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 420px;
+            border: none;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+
+        .info-text h2 {
+            font-family: var(--f-heading);
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 800;
+            color: var(--c-primary-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .info-text p {
+            color: var(--c-text-light);
+            margin-bottom: 1rem;
+            line-height: 1.85;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 480px) {
+            .info-cards { grid-template-columns: 1fr; }
+        }
+
+        .info-card {
+            background: var(--c-white);
+            border-radius: var(--r-md);
+            padding: 1.4rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--c-border);
+            transition: transform var(--ease), box-shadow var(--ease);
+        }
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .info-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: .6rem;
+            display: block;
+        }
+        .info-card h3 {
+            font-family: var(--f-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            color: var(--c-text-muted);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            margin-bottom: .2rem;
+        }
+        .info-card strong {
+            font-family: var(--f-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--c-primary);
+            display: block;
+        }
+        .info-card p {
+            font-size: .82rem;
+            color: var(--c-text-muted);
+            margin-top: .2rem;
+        }
+
+        /* =============================================
+           SECCIÓN: QUÉ VISITAR EN JARDÍN AMÉRICA
+        ============================================= */
+        #que-visitar-local { background: var(--c-white); }
+
+        /* ---- CARRUSEL ---- */
+        .carousel {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform .5s ease;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-slide img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            background: rgba(13,40,24,.72);
+            backdrop-filter: blur(4px);
+            color: var(--c-white);
+            border: none;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex; align-items: center; justify-content: center;
+            transition: background var(--ease), transform var(--ease);
+            line-height: 1;
+        }
+        .carousel-btn:hover { background: rgba(13,40,24,.95); }
+        .carousel-prev { left: .75rem; }
+        .carousel-next { right: .75rem; }
+        .carousel-dots {
+            position: absolute;
+            bottom: .75rem; left: 50%;
+            transform: translateX(-50%);
+            display: flex; gap: .4rem;
+            z-index: 10;
+        }
+        .carousel-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.45);
+            border: none; cursor: pointer; padding: 0;
+            transition: background var(--ease), transform var(--ease);
+        }
+        .carousel-dot.active {
+            background: var(--c-white);
+            transform: scale(1.35);
+        }
+        .carousel-counter {
+            position: absolute;
+            top: .75rem; right: .75rem;
+            background: rgba(13,40,24,.72);
+            color: var(--c-white);
+            font-family: var(--f-heading);
+            font-size: .72rem; font-weight: 700;
+            padding: .22rem .65rem;
+            border-radius: 100px;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ---- IMAGEN FIJA EN FEATURED ---- */
+        .featured-img > img {
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ---- BOTÓN VER GALERÍA ---- */
+        .btn-galeria {
+            position: absolute;
+            bottom: .75rem; right: .75rem;
+            background: rgba(13,40,24,.78);
+            backdrop-filter: blur(4px);
+            color: var(--c-white);
+            border: none;
+            padding: .45rem 1rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-size: .78rem; font-weight: 600;
+            cursor: pointer;
+            z-index: 10;
+            display: flex; align-items: center; gap: .4rem;
+            transition: background var(--ease), transform var(--ease);
+        }
+        .btn-galeria:hover { background: var(--c-primary-dark); transform: translateY(-1px); }
+        .btn-galeria:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+
+        /* ---- MODAL GALERÍA ---- */
+        .modal-galeria-box { max-width: 720px; }
+        .galeria-carousel {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            background: #111;
+        }
+
+        /* ---- MODAL ---- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.55);
+            backdrop-filter: blur(5px);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--ease);
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal-box {
+            background: var(--c-white);
+            border-radius: var(--r-lg);
+            max-width: 460px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: transform var(--ease);
+        }
+        .modal-overlay.open .modal-box { transform: none; }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--c-primary-dark), var(--c-primary-light));
+            color: var(--c-white);
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .modal-header h3 {
+            font-family: var(--f-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .modal-close-btn {
+            background: rgba(255,255,255,.15);
+            border: none;
+            color: var(--c-white);
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: background var(--ease);
+            flex-shrink: 0;
+        }
+        .modal-close-btn:hover { background: rgba(255,255,255,.3); }
+
+        .modal-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .modal-section-title {
+            font-family: var(--f-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--c-text-muted);
+            margin-bottom: .6rem;
+        }
+        .tarifa-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .84rem;
+        }
+        .tarifa-table tr {
+            border-bottom: 1px solid var(--c-border);
+        }
+        .tarifa-table tr:last-child { border-bottom: none; }
+        .tarifa-table td {
+            padding: .5rem .25rem;
+            color: var(--c-text-light);
+            vertical-align: top;
+        }
+        .tarifa-table td:first-child {
+            font-family: var(--f-heading);
+            font-weight: 700;
+            color: var(--c-primary);
+            white-space: nowrap;
+            padding-right: 1rem;
+            width: 1%;
+        }
+        .tarifa-note {
+            font-size: .75rem;
+            color: var(--c-text-muted);
+            margin-top: .4rem;
+            font-style: italic;
+        }
+        .descuento-badge {
+            display: inline-block;
+            background: #d1fae5;
+            color: #065f46;
+            font-family: var(--f-heading);
+            font-weight: 700;
+            font-size: .75rem;
+            padding: .15rem .5rem;
+            border-radius: 100px;
+            margin-right: .4rem;
+        }
+        .modal-vigencia {
+            text-align: center;
+            font-size: .75rem;
+            color: var(--c-text-muted);
+            background: var(--c-offwhite);
+            border-radius: var(--r-sm);
+            padding: .5rem;
+            font-style: italic;
+        }
+        .modal-location-text {
+            font-size: .88rem;
+            color: var(--c-text-light);
+            line-height: 1.65;
+        }
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--c-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            padding: .85rem 1.5rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-weight: 700;
+            font-size: .92rem;
+            transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+        }
+        .btn-whatsapp:hover { background: #128C7E; transform: translateY(-2px); box-shadow: 0 4px 14px rgba(37,211,102,.35); }
+        .btn-maps {
+            background: transparent;
+            color: var(--c-primary);
+            border: 2px solid var(--c-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            padding: .75rem 1.5rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-weight: 700;
+            font-size: .88rem;
+            transition: background var(--ease), color var(--ease);
+        }
+        .btn-maps:hover { background: var(--c-primary); color: var(--c-white); }
+
+        .featured-btns {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap;
+        }
+        .btn-whatsapp-sm {
+            background: #25D366;
+            color: var(--c-white);
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .85rem 1.4rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-size: .9rem;
+            font-weight: 700;
+            transition: background var(--ease), transform var(--ease);
+        }
+        .btn-whatsapp-sm:hover { background: #128C7E; transform: translateY(-2px); }
+        .btn-ubicacion {
+            background: rgba(255,255,255,.15);
+            color: var(--c-white);
+            border: 2px solid rgba(255,255,255,.5);
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .85rem 1.4rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-size: .9rem;
+            font-weight: 700;
+            transition: background var(--ease), border-color var(--ease), transform var(--ease);
+        }
+        .btn-ubicacion:hover { background: rgba(255,255,255,.25); border-color: var(--c-white); transform: translateY(-2px); }
+        .btn-dormis {
+            background: #8B5E3C;
+            color: var(--c-white);
+            border: none;
+            padding: .6rem 1.1rem;
+            border-radius: var(--r-sm);
+            font-family: var(--f-heading);
+            font-size: .9rem;
+            font-weight: 700;
+            display: inline-flex; align-items: center; gap: .4rem;
+            cursor: pointer;
+            transition: background var(--ease), transform var(--ease);
+        }
+        .btn-dormis:hover { background: #6e4a2d; transform: translateY(-2px); }
+
+        /* ---- FEATURED: SALTOS DEL TABAY ---- */
+        .featured-wrap {
+            background: linear-gradient(135deg, var(--c-primary-dark) 0%, var(--c-primary-light) 100%);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3.5rem;
+        }
+        @media (max-width: 800px) {
+            .featured-wrap { grid-template-columns: 1fr; }
+        }
+
+        .featured-img {
+            position: relative;
+            min-height: 420px;
+            overflow: hidden;
+            background: var(--c-primary);
+            align-self: stretch;
+        }
+        .featured-img img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .featured-pill {
+            position: absolute;
+            top: 1.25rem; left: 1.25rem;
+            background: var(--c-accent);
+            color: var(--c-primary-dark);
+            font-family: var(--f-heading);
+            font-size: .73rem;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: .35rem 1rem;
+            border-radius: 100px;
+        }
+
+        .featured-body {
+            padding: 2.5rem 3rem;
+            color: var(--c-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media (max-width: 800px) {
+            .featured-body { padding: 2rem 1.75rem; }
+        }
+        .featured-body h3 {
+            font-family: var(--f-heading);
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+        .featured-body p {
+            opacity: .9;
+            line-height: 1.82;
+            margin-bottom: 1.25rem;
+        }
+        .featured-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .55rem;
+            margin-bottom: 2rem;
+        }
+        .featured-list li {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-size: .9rem;
+            opacity: .9;
+        }
+        .featured-list li::before {
+            content: '';
+            width: 7px; height: 7px;
+            background: var(--c-accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ---- OTRAS ATRACCIONES LOCALES ---- */
+        .local-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .local-card {
+            background: var(--c-offwhite);
+            border-radius: var(--r-md);
+            overflow: hidden;
+            border: 1px solid var(--c-border);
+            transition: transform var(--ease), box-shadow var(--ease);
+        }
+        .local-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .local-card-img {
+            height: 200px;
+            overflow: hidden;
+            background: var(--c-primary-light);
+        }
+        .local-card-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+        .local-card:hover .local-card-img img { transform: scale(1.06); }
+
+        .local-card-body { padding: 1.4rem; }
+        .local-card-body h3 {
+            font-family: var(--f-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--c-primary-dark);
+            margin-bottom: .5rem;
+        }
+        .local-card-body p {
+            font-size: .88rem;
+            color: var(--c-text-light);
+            line-height: 1.72;
+            overflow-wrap: break-word;
+        }
+
+        /* ---- ACCIONES EN CARDS LOCALES ---- */
+        .local-card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+            margin-top: .9rem;
+            padding-top: .85rem;
+            border-top: 1px solid var(--c-border);
+        }
+        .lc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            padding: .28rem .75rem;
+            border-radius: 100px;
+            font-family: var(--f-heading);
+            font-size: .73rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity var(--ease), transform var(--ease);
+            white-space: nowrap;
+        }
+        .lc-btn:hover  { opacity: .82; transform: translateY(-1px); }
+        .lc-btn:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+        .lc-btn-map { background: #e8f5e9; color: #1B5E20; }
+        .lc-btn-ig  { background: #fce4ec; color: #880e4f; }
+        .lc-btn-wa  { background: #e8f5e9; color: #1b5e20; }
+
+        /* =============================================
+           SECCIÓN: QUÉ VISITAR DESDE JARDÍN AMÉRICA
+        ============================================= */
+        #que-visitar-provincia { background: var(--c-offwhite); padding: 3.5rem 0; }
+
+        .province-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        @media (max-width: 400px) {
+            .province-grid { grid-template-columns: 1fr; }
+        }
+
+        .prov-card {
+            background: var(--c-white);
+            border-radius: var(--r-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--c-border);
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--ease), box-shadow var(--ease);
+        }
+        .prov-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .prov-card-img {
+            height: 155px;
+            overflow: hidden;
+            position: relative;
+        }
+        .prov-card-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+        .prov-card:hover .prov-card-img img { transform: scale(1.05); }
+
+        .prov-dist-badge {
+            position: absolute;
+            bottom: .6rem; right: .6rem;
+            background: rgba(13,40,24,.82);
+            color: var(--c-white);
+            font-family: var(--f-heading);
+            font-size: .7rem;
+            font-weight: 700;
+            padding: .2rem .65rem;
+            border-radius: 100px;
+            backdrop-filter: blur(4px);
+        }
+
+        .prov-card-body {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .prov-card-body h3 {
+            font-family: var(--f-heading);
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--c-primary-dark);
+            margin-bottom: .15rem;
+        }
+        .prov-location {
+            font-size: .72rem;
+            color: var(--c-text-muted);
+            font-style: italic;
+            margin-bottom: .6rem;
+        }
+        .prov-card-body p {
+            font-size: .82rem;
+            color: var(--c-text-light);
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 1rem;
+        }
+        .prov-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .75rem;
+            padding-top: .75rem;
+            border-top: 1px solid var(--c-border);
+            flex-wrap: wrap;
+        }
+        .prov-dist-text {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            font-size: .76rem;
+            color: var(--c-text-muted);
+            font-weight: 600;
+        }
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            font-family: var(--f-heading);
+            font-size: .73rem;
+            font-weight: 700;
+            color: var(--c-primary);
+            padding: .3rem .75rem;
+            border: 1.5px solid var(--c-primary);
+            border-radius: 100px;
+            transition: background var(--ease), color var(--ease);
+            white-space: nowrap;
+        }
+        .card-link:hover {
+            background: var(--c-primary);
+            color: var(--c-white);
+        }
+
+        /* =============================================
+           FOOTER
+        ============================================= */
+        footer {
+            background: var(--c-primary-dark);
+            color: var(--c-white);
+            padding: 3.5rem 0 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        .footer-brand h2 {
+            font-family: var(--f-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .footer-brand p {
+            font-size: .88rem;
+            opacity: .65;
+            line-height: 1.75;
+            max-width: 300px;
+        }
+        .footer-col h3 {
+            font-family: var(--f-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .45;
+            margin-bottom: 1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+        .footer-col a {
+            font-size: .88rem;
+            opacity: .75;
+            transition: opacity var(--ease);
+        }
+        .footer-col a:hover { opacity: 1; }
+        .footer-col p {
+            font-size: .88rem;
+            opacity: .65;
+            margin-bottom: .4rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom p {
+            font-size: .78rem;
+            opacity: .45;
+        }
+
+        /* =============================================
+           SECCIÓN INFORMACIÓN DE INTERÉS
+        ============================================= */
+        #informacion { background: var(--c-white); }
+
+        .info-tabs {
+            display: flex;
+            gap: .5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .info-tab-btn {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--c-offwhite);
+            border: 2px solid var(--c-border);
+            color: var(--c-text-light);
+            font-family: var(--f-heading);
+            font-size: .9rem;
+            font-weight: 700;
+            padding: .65rem 1.4rem;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background var(--ease), border-color var(--ease), color var(--ease);
+        }
+        .info-tab-btn:hover {
+            border-color: var(--c-primary-light);
+            color: var(--c-primary);
+        }
+        .info-tab-btn.active {
+            background: var(--c-primary);
+            border-color: var(--c-primary);
+            color: var(--c-white);
+        }
+        .info-tab-btn .tab-icon { font-size: 1.1rem; }
+
+        .info-panel { display: none; }
+        .info-panel.active { display: block; }
+
+        /* --- Colectivos --- */
+        .colectivos-empresa {
+            margin-bottom: 2.5rem;
+        }
+        .colectivos-empresa h3 {
+            font-family: var(--f-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--c-primary-dark);
+            margin-bottom: 1rem;
+            padding-bottom: .5rem;
+            border-bottom: 2px solid var(--c-primary);
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .tabla-colectivos {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .9rem;
+        }
+        .tabla-colectivos thead tr {
+            background: var(--c-primary);
+            color: var(--c-white);
+        }
+        .tabla-colectivos th {
+            font-family: var(--f-heading);
+            font-size: .8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            padding: .75rem 1rem;
+            text-align: left;
+        }
+        .tabla-colectivos td {
+            padding: .7rem 1rem;
+            color: var(--c-text-light);
+            border-bottom: 1px solid var(--c-border);
+        }
+        .tabla-colectivos tbody tr:last-child td { border-bottom: none; }
+        .tabla-colectivos tbody tr:nth-child(even) { background: var(--c-offwhite); }
+        @media (max-width: 600px) {
+            .tabla-colectivos thead { display: none; }
+            .tabla-colectivos td {
+                display: block;
+                padding: .4rem 1rem;
+            }
+            .tabla-colectivos td::before {
+                content: attr(data-label) ": ";
+                font-weight: 700;
+                color: var(--c-primary-dark);
+            }
+            .tabla-colectivos tr { display: block; border-bottom: 2px solid var(--c-border); padding: .5rem 0; }
+        }
+
+        /* --- Alojamientos y Gastronomía (cards) --- */
+        .info-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .info-card {
+            background: var(--c-offwhite);
+            border: 1px solid var(--c-border);
+            border-radius: var(--r-md);
+            padding: 1.5rem;
+            transition: box-shadow var(--ease), transform var(--ease);
+        }
+        .info-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+        .info-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: .9rem;
+            margin-bottom: 1rem;
+        }
+        .info-card-icon {
+            width: 44px; height: 44px;
+            background: var(--c-primary);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .info-card-title {
+            font-family: var(--f-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--c-primary-dark);
+            margin-bottom: .2rem;
+        }
+        .info-card-tipo {
+            display: inline-block;
+            background: var(--c-accent);
+            color: var(--c-white);
+            font-family: var(--f-heading);
+            font-size: .68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            padding: .2rem .7rem;
+            border-radius: 100px;
+        }
+        .info-card-body p {
+            font-size: .875rem;
+            color: var(--c-text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: .5rem;
+            margin-bottom: .4rem;
+            line-height: 1.5;
+        }
+        .info-card-body p span.ic { flex-shrink: 0; }
+
+        /* =============================================
+           SCROLL REVEAL (JS class)
+        ============================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ACCESIBILIDAD: SALTAR AL CONTENIDO -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ENCABEZADO / NAVBAR -->
+    <header role="banner">
+        <nav class="navbar" id="navbar" aria-label="Navegación principal">
+            <div class="container nav-inner">
+
+                <a href="#hero" class="nav-logo" aria-label="Jardín América Turismo — ir al inicio">
+                    <div class="nav-logo-icon" aria-hidden="true">🌿</div>
+                    <div>
+                        Jardín América
+                        <span>Misiones · Argentina</span>
+                    </div>
+                </a>
+
+                <button
+                    class="nav-toggle"
+                    id="nav-toggle"
+                    aria-controls="nav-menu"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+
+                <ul class="nav-menu" id="nav-menu" role="list">
+                    <li><a href="#inicio"               class="nav-link">Inicio</a></li>
+                    <li><a href="#que-visitar-local"    class="nav-link">Qué visitar aquí</a></li>
+                    <li><a href="#que-visitar-provincia" class="nav-link">Qué visitar desde aquí</a></li>
+                    <li><a href="#informacion"          class="nav-link">Información útil</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ============================
+             HERO
+        ============================= -->
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div
+                class="hero-bg"
+                role="img"
+                aria-label="Los Saltos del Tabay: cascadas escalonadas entre la selva misionera, principal atractivo de Jardín América"
+            ></div>
+            <div class="hero-content">
+                <p class="hero-badge" aria-hidden="true">✦ Misiones · Argentina</p>
+                <h1 id="hero-title">
+                    Bienvenido a<br><em>Jardín América</em>
+                </h1>
+                <p class="hero-desc">
+                    En el corazón de la selva misionera, donde la naturaleza cobra vida en cada rincón.
+                    Cascadas, selva virgen y una biodiversidad única en el mundo te esperan.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#que-visitar-local" class="btn btn-primary">
+                        <span aria-hidden="true">🌊</span>
+                        Saltos del Tabay
+                    </a>
+                    <a href="#inicio" class="btn btn-outline">
+                        <span aria-hidden="true">📍</span>
+                        Cómo llegar
+                    </a>
+                </div>
+                <div class="hero-stats" role="list" aria-label="Distancias desde Jardín América">
+                    <div class="hero-stat" role="listitem">
+                        <strong>100 km</strong>
+                        <span>de Posadas</span>
+                    </div>
+                    <div class="hero-stat" role="listitem">
+                        <strong>200 km</strong>
+                        <span>de Puerto Iguazú</span>
+                    </div>
+                    <div class="hero-stat" role="listitem">
+                        <strong>Ruta 12</strong>
+                        <span>acceso principal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================
+             INICIO — INFO GENERAL
+        ============================= -->
+        <section id="inicio" aria-labelledby="info-title">
+            <div class="container">
+
+                <div class="section-header">
+                    <p class="section-badge">La ciudad</p>
+                    <h2 class="section-title" id="info-title">Jardín América, la perla de la Ruta 12</h2>
+                    <p class="section-subtitle">Una ciudad misionera que enamora con su naturaleza y su gente.</p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-text reveal">
+                        <h2>¿Dónde está y cómo es?</h2>
+                        <p>
+                            Jardín América está ubicada en el centro geográfico de la provincia de Misiones, sobre la Ruta Nacional 12,
+                            la arteria principal que conecta Posadas con Puerto Iguazú. Su nombre lo dice todo: es un verdadero jardín en medio de América.
+                        </p>
+                        <p>
+                            Rodeada de una naturaleza exuberante propia de la selva paranaense, la ciudad es el punto de partida ideal para explorar
+                            los grandes atractivos de la provincia. A unos 30 minutos de las Ruinas Jesuíticas de San Ignacio y a 2 horas y media de las Cataratas del Iguazú.
+                        </p>
+                        <p>
+                            Su entorno natural es notable: una gran variedad de aves y una rica flora subtropical
+                            con orquídeas y especies nativas de la selva misionera. A escasos kilómetros se encuentra el
+                            <strong>Parque Provincial Valle del Cuñá Pirú</strong>, hogar de los principales
+                            representantes de la fauna de la selva misionera.
+                        </p>
+                        <p>
+                            El clima es subtropical cálido y húmedo durante todo el año, con lluvias distribuidas en todas las estaciones
+                            que mantienen verde e inundada de vida la selva que rodea la ciudad.
+                        </p>
+                    </div>
+
+                    <div role="list" aria-label="Datos generales de Jardín América" class="reveal">
+                        <div class="info-cards">
+                            <article class="info-card" role="listitem">
+                                <span class="info-card-icon" aria-hidden="true">📍</span>
+                                <h3>Ubicación</h3>
+                                <strong>Centro de Misiones</strong>
+                                <p>Ruta Nacional 12</p>
+                            </article>
+                            <article class="info-card" role="listitem">
+                                <span class="info-card-icon" aria-hidden="true">🏙️</span>
+                                <h3>Población</h3>
+                                <strong>~50.000 hab.</strong>
+                                <p>Ciudad en crecimiento</p>
+                            </article>
+                            <article class="info-card" role="listitem">
+                                <span class="info-card-icon" aria-hidden="true">🚗</span>
+                                <h3>Desde Posadas</h3>
+                                <strong>100 km</strong>
+                                <p>~1 h 15 min por Ruta 12</p>
+                            </article>
+                            <article class="info-card" role="listitem">
+                                <span class="info-card-icon" aria-hidden="true">🚗</span>
+                                <h3>Desde Puerto Iguazú</h3>
+                                <strong>200 km</strong>
+                                <p>~2 h 30 min por Ruta 12</p>
+                            </article>
+                            <article class="info-card" role="listitem">
+                                <span class="info-card-icon" aria-hidden="true">🌡️</span>
+                                <h3>Clima</h3>
+                                <strong>Subtropical</strong>
+                                <p>Cálido y húmedo</p>
+                            </article>
+                            <article class="info-card" role="listitem">
+                                <span class="info-card-icon" aria-hidden="true">🗺️</span>
+                                <h3>Provincia</h3>
+                                <strong>Misiones</strong>
+                                <p>Argentina</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CÓMO LLEGAR + MAPA -->
+                <div class="como-llegar">
+
+                    <div class="como-llegar-info reveal">
+                        <h2>¿Cómo llegar?</h2>
+
+                        <div class="transporte-item">
+                            <div class="transporte-icon" aria-hidden="true">🚗</div>
+                            <div class="transporte-body">
+                                <h3>En auto</h3>
+                                <p>
+                                    Jardín América se encuentra sobre la <strong>Ruta Nacional 12</strong>,
+                                    la principal vía de conexión entre Posadas y Puerto Iguazú.
+                                    Desde <strong>Posadas</strong>: 100 km hacia el norte (~1 h 15 min).
+                                    Desde <strong>Puerto Iguazú</strong>: 200 km hacia el sur (~2 h 30 min).
+                                    La ruta está completamente pavimentada y en buen estado.
+                                    Además, la <strong>Ruta Provincial N° 7</strong> conecta el centro urbano
+                                    con la <strong>Ruta Nacional 14</strong> —el corredor que une Misiones con
+                                    Corrientes y el resto del país por el este—, lo que convierte a Jardín América
+                                    en un nodo de acceso desde ambas rutas nacionales.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="transporte-item">
+                            <div class="transporte-icon" aria-hidden="true">🚌</div>
+                            <div class="transporte-body">
+                                <h3>En colectivo</h3>
+                                <p>
+                                    Hay servicios de larga distancia que pasan por Jardín América
+                                    desde <strong>Posadas</strong>, <strong>Puerto Iguazú</strong>
+                                    y otras ciudades de Misiones. La terminal de ómnibus se encuentra
+                                    en el centro de la ciudad, frente al Cristo de la Hermandad.
+                                    Empresas como <strong>Río Uruguay</strong> y <strong>Expreso Singer</strong>
+                                    operan en este corredor.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="transporte-item">
+                            <div class="transporte-icon" aria-hidden="true">✈️</div>
+                            <div class="transporte-body">
+                                <h3>En avión</h3>
+                                <p>
+                                    El aeropuerto más cercano es el <strong>Aeropuerto Internacional
+                                    Libertador Gral. San Martín</strong> de Posadas (100 km),
+                                    con vuelos diarios desde Buenos Aires. También puede usarse el
+                                    <strong>Aeropuerto Internacional de Iguazú</strong> (200 km).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mapa-wrap reveal" role="region" aria-label="Mapa turístico de Jardín América">
+                        <iframe
+                            src="https://www.google.com/maps/d/embed?mid=1moxM3yLxCF-AeQOEoxLzfiNuxcGwcPQ"
+                            title="Mapa turístico de Jardín América"
+                            allowfullscreen
+                            loading="lazy"
+                        ></iframe>
+                        <p>Mapa turístico de Jardín América — hacé clic para explorar los puntos de interés</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================
+             QUÉ VISITAR EN JARDÍN AMÉRICA
+        ============================= -->
+        <section id="que-visitar-local" aria-labelledby="local-title">
+            <div class="container">
+
+                <header class="section-header">
+                    <p class="section-badge">Destino local</p>
+                    <h2 class="section-title" id="local-title">Qué visitar en Jardín América</h2>
+                    <p class="section-subtitle">
+                        La selva que rodea la ciudad guarda tesoros naturales que sorprenden a cada visitante.
+                    </p>
+                </header>
+
+                <!-- SALTOS DEL TABAY — ATRACTIVO PRINCIPAL -->
+                <article class="featured-wrap reveal" aria-labelledby="tabay-title">
+                    <div class="featured-img">
+                        <img src="img/tabay-seccion.jpg" alt="Cascadas del Tabay entre rocas y vegetación selvática de Misiones" loading="eager" width="900" height="600">
+                        <button class="btn-galeria" id="btn-abrir-galeria" aria-label="Ver galería de fotos (abre en diálogo)" aria-haspopup="dialog">
+                            <span aria-hidden="true">🖼</span> Ver galería
+                        </button>
+                        <span class="featured-pill" aria-label="Atractivo principal de Jardín América">
+                            ⭐ Principal atractivo
+                        </span>
+                    </div>
+                    <div class="featured-body">
+                        <h3 id="tabay-title">Saltos del Tabay</h3>
+                        <p>
+                            El gran tesoro natural de Jardín América. Los Saltos del Tabay son una serie de cascadas y pozones escalonados
+                            en plena selva paranaense, donde el agua cae sobre rocas basálticas cubiertas de una vegetación exuberante.
+                        </p>
+                        <p>
+                            Un destino imperdible para los amantes de la naturaleza, el trekking y la fotografía.
+                            El entorno natural prácticamente intacto convierte a este lugar en una experiencia única,
+                            con sonidos de aves, el rumor del agua y el aroma de la selva húmeda.
+                        </p>
+                        <ul class="featured-list" aria-label="Datos destacados de los Saltos del Tabay">
+                            <li>A aproximadamente 17 km del centro de la ciudad</li>
+                            <li>Rodeados de selva subtropical nativa paranaense</li>
+                            <li>Ideales para trekking, senderismo y baños naturales</li>
+                            <li>Aguas cristalinas de nacientes serranas</li>
+                            <li>Entorno propicio para avistaje de aves y fauna autóctona</li>
+                            <li>Apto para toda la familia</li>
+                        </ul>
+                        <div class="featured-btns">
+                            <button class="btn btn-primary" id="btn-abrir-modal" aria-label="Ver precios y tarifas de los Saltos del Tabay" aria-haspopup="dialog">
+                                <span aria-hidden="true">📋</span>
+                                Tarifas
+                            </button>
+                            <button class="btn btn-dormis" id="btn-abrir-dormis" aria-label="Ver galería de dormis disponibles para alquilar" aria-haspopup="dialog">
+                                <span aria-hidden="true">🛖</span>
+                                Dormis
+                            </button>
+                            <a
+                                href="https://wa.me/5493743400421?text=Hola!%20Quiero%20consultar%20sobre%20los%20Saltos%20del%20Tabay"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-whatsapp-sm"
+                                aria-label="Contactar por WhatsApp (abre en nueva pestaña)"
+                            >
+                                <span aria-hidden="true">💬</span>
+                                WhatsApp
+                            </a>
+                            <a
+                                href="https://www.google.com/maps/search/Saltos+del+Tabay+Jardín+América+Misiones"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-ubicacion"
+                                aria-label="Ver ubicación en Google Maps (abre en nueva pestaña)"
+                            >
+                                <span aria-hidden="true">📍</span>
+                                Ubicación
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- MODAL: SALTOS DEL TABAY -->
+                <div
+                    class="modal-overlay"
+                    id="tabay-modal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-tabay-title"
+                >
+                    <div class="modal-box">
+                        <div class="modal-header">
+                            <h3 id="modal-tabay-title"><span aria-hidden="true">🌊</span> Saltos del Tabay</h3>
+                            <button class="modal-close-btn" id="btn-cerrar-modal" aria-label="Cerrar">✕</button>
+                        </div>
+                        <div class="modal-body">
+
+                            <p class="modal-vigencia">Tarifas Verano 2026 · vigentes desde el 29 de noviembre de 2025</p>
+
+                            <!-- INGRESOS -->
+                            <div>
+                                <p class="modal-section-title">🎟️ Ingresos</p>
+                                <table class="tarifa-table" aria-label="Tarifas de ingreso">
+                                    <tbody>
+                                        <tr><td>$4.000</td><td>Locales</td></tr>
+                                        <tr><td>$6.000</td><td>Provinciales</td></tr>
+                                        <tr><td>$7.000</td><td>Nacionales</td></tr>
+                                        <tr><td>$12.000</td><td>Extranjeros</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- DESCUENTOS -->
+                            <div>
+                                <p class="modal-section-title">🏷️ Descuentos</p>
+                                <table class="tarifa-table" aria-label="Descuentos en el ingreso">
+                                    <tbody>
+                                        <tr><td><span class="descuento-badge">-50%</span></td><td>Jubilados *</td></tr>
+                                        <tr><td><span class="descuento-badge">-50%</span></td><td>Grupos de 20+ personas (4 hs) *</td></tr>
+                                        <tr><td><span class="descuento-badge">Gratis</span></td><td>Personas con discapacidad *</td></tr>
+                                        <tr><td><span class="descuento-badge">Gratis</span></td><td>Excombatientes de Malvinas *</td></tr>
+                                    </tbody>
+                                </table>
+                                <p class="tarifa-note">* Presentando carnet correspondiente</p>
+                            </div>
+
+                            <!-- CARPAS Y QUINCHOS -->
+                            <div>
+                                <p class="modal-section-title">⛺ Carpas y Quinchos</p>
+                                <table class="tarifa-table" aria-label="Tarifas de carpas y quinchos">
+                                    <tbody>
+                                        <tr><td>$4.000</td><td>Carpa x día</td></tr>
+                                        <tr><td>$15.000</td><td>Quincho sin mesa</td></tr>
+                                        <tr><td>$23.000</td><td>Quincho con mesa</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- DORMIS -->
+                            <div>
+                                <p class="modal-section-title">🛖 Dormis (precio por día)</p>
+                                <table class="tarifa-table" aria-label="Tarifas de dormis">
+                                    <tbody>
+                                        <tr><td>$35.000</td><td>"Cañón del Tabay" — hasta 2 pers.</td></tr>
+                                        <tr><td>$55.000</td><td>"Lagos" — hasta 8 pers.</td></tr>
+                                        <tr><td>$62.000</td><td>"Los Pioneros" — hasta 6 pers.</td></tr>
+                                        <tr><td>$75.000</td><td>"Los Pioneros" — hasta 8 pers.</td></tr>
+                                        <tr><td>$75.000</td><td>"Los Senderos" — hasta 8 pers.</td></tr>
+                                        <tr><td>$90.000</td><td>"Selva Misionera" — hasta 9 pers.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- ESTACIONAMIENTO -->
+                            <div>
+                                <p class="modal-section-title">🚗 Estacionamiento</p>
+                                <table class="tarifa-table" aria-label="Tarifas de estacionamiento">
+                                    <tbody>
+                                        <tr><td>$3.000</td><td>Vehículos</td></tr>
+                                        <tr><td>$7.000</td><td>Ómnibus (hasta 2 hs) *</td></tr>
+                                        <tr><td>$1.500</td><td>Ómnibus (por hora adicional) **</td></tr>
+                                    </tbody>
+                                </table>
+                                <p class="tarifa-note">* Hasta 2 horas · ** Por hora a partir de la segunda hora</p>
+                            </div>
+
+                            <!-- UBICACIÓN -->
+                            <div>
+                                <p class="modal-section-title">📍 Ubicación</p>
+                                <p class="modal-location-text">Ruta 12, Km 1443 · Jardín América, Misiones</p>
+                            </div>
+
+                            <!-- ACCIONES -->
+                            <div class="modal-actions">
+                                <a
+                                    href="https://wa.me/5493743400421?text=Hola!%20Quiero%20consultar%20sobre%20los%20Saltos%20del%20Tabay"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn-whatsapp"
+                                    aria-label="Contactar por WhatsApp (abre en nueva pestaña)"
+                                >
+                                    <span aria-hidden="true">💬</span>
+                                    WhatsApp: +54 9 3743 400421
+                                </a>
+                                <a
+                                    href="https://www.google.com/maps/search/Saltos+del+Tabay+Jardín+América+Misiones"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn-maps"
+                                    aria-label="Ver ubicación en Google Maps (abre en nueva pestaña)"
+                                >
+                                    <span aria-hidden="true">📍</span>
+                                    Ver en Google Maps
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL GALERÍA: SALTOS DEL TABAY -->
+                <div
+                    class="modal-overlay"
+                    id="galeria-modal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="galeria-modal-title"
+                >
+                    <div class="modal-box modal-galeria-box">
+                        <div class="modal-header">
+                            <h3 id="galeria-modal-title"><span aria-hidden="true">🖼</span> Galería — Saltos del Tabay</h3>
+                            <button class="modal-close-btn" id="btn-cerrar-galeria" aria-label="Cerrar galería">✕</button>
+                        </div>
+                        <div class="galeria-carousel"
+                             role="region"
+                             aria-roledescription="carrusel"
+                             aria-label="Galería de fotos de los Saltos del Tabay">
+                            <div class="carousel-track" aria-live="polite" aria-atomic="false">
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 8">
+                                    <img src="img/tabay-01.jpg" alt="Pasarela y escalera metálica del parque entre árboles centenarios de la selva misionera" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 8" aria-hidden="true">
+                                    <img src="img/tabay-02.jpg" alt="Deck de madera rojo con vista a las cascadas del Tabay y selva al fondo" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 8" aria-hidden="true">
+                                    <img src="img/tabay-03.jpg" alt="Cartel de entrada Saltos del Tabay sobre la ruta rodeada de arboledas" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 8" aria-hidden="true">
+                                    <img src="img/tabay-04.jpg" alt="Vista panorámica de las cascadas con banco de madera y palmera al frente" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 8" aria-hidden="true">
+                                    <img src="img/tabay-05.jpg" alt="Cascadas escalonadas sobre rocas basálticas con selva verde exuberante al fondo" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 8" aria-hidden="true">
+                                    <img src="img/tabay-06.jpg" alt="Turistas y familias disfrutando y bañándose en las cascadas del Tabay en verano" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="7 de 8" aria-hidden="true">
+                                    <img src="img/tabay-07.jpg" alt="Visitantes sentados sobre las rocas entre las cascadas en un día soleado" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="8 de 8" aria-hidden="true">
+                                    <img src="img/tabay-08.jpg" alt="Área de mesas y quinchos del parque rodeada de vegetación selvática misionera" loading="lazy" width="900" height="600">
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-prev" aria-label="Foto anterior">&#8249;</button>
+                            <button class="carousel-btn carousel-next" aria-label="Foto siguiente">&#8250;</button>
+                            <div class="carousel-dots" role="tablist" aria-label="Navegar fotos"></div>
+                            <div class="carousel-counter" aria-hidden="true">1 / 8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL GALERÍA: DORMIS DEL TABAY -->
+                <div
+                    class="modal-overlay"
+                    id="dormis-modal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="dormis-modal-title"
+                >
+                    <div class="modal-box modal-galeria-box">
+                        <div class="modal-header">
+                            <h3 id="dormis-modal-title"><span aria-hidden="true">🛖</span> Dormis — Saltos del Tabay</h3>
+                            <button class="modal-close-btn" id="btn-cerrar-dormis" aria-label="Cerrar galería de dormis">✕</button>
+                        </div>
+                        <div class="galeria-carousel"
+                             role="region"
+                             aria-roledescription="carrusel"
+                             aria-label="Galería de fotos de los dormis">
+                            <div class="carousel-track" aria-live="polite" aria-atomic="false">
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 6">
+                                    <img src="img/dormi-01.jpg" alt="Interior de dormi con camas y ventana con vista a la selva" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 6" aria-hidden="true">
+                                    <img src="img/dormi-02.jpg" alt="Dormi con mobiliario de madera y ambientación selvática" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 6" aria-hidden="true">
+                                    <img src="img/dormi-03.jpg" alt="Espacio de descanso en dormi rodeado de vegetación nativa" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" aria-hidden="true">
+                                    <img src="img/dormi-04.jpg" alt="Habitación de dormi con capacidad para varias personas" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" aria-hidden="true">
+                                    <img src="img/dormi-05.jpg" alt="Exterior de dormi integrado en el entorno de la selva misionera" loading="lazy" width="900" height="600">
+                                </div>
+                                <div class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" aria-hidden="true">
+                                    <img src="img/dormi-06.jpg" alt="Área común de los dormis con mesas y vista a la naturaleza" loading="lazy" width="900" height="600">
+                                </div>
+                            </div>
+                            <button class="carousel-btn carousel-prev" aria-label="Foto anterior">&#8249;</button>
+                            <button class="carousel-btn carousel-next" aria-label="Foto siguiente">&#8250;</button>
+                            <div class="carousel-dots" role="tablist" aria-label="Navegar fotos"></div>
+                            <div class="carousel-counter" aria-hidden="true">1 / 6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTRAS ATRACCIONES LOCALES -->
+                <h3 class="sr-only">Otros atractivos en los alrededores</h3>
+                <div class="local-grid" role="list">
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="cristo-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/cristo-hermandad.jpg"
+                                alt="Cristo de la Hermandad: imponente escultura de 18 metros sobre cruz de lapacho frente a la terminal de Jardín América"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="cristo-title">Cristo de la Hermandad</h3>
+                            <p>
+                                Icónico monumento ubicado frente a la terminal de ómnibus. Fue tallado originalmente
+                                en una sola pieza de madera de timbó de 8,50 m por el escultor chileno Luis Javín Sizzara,
+                                e inaugurado el 20 de diciembre de 1998. Sobre un pedestal de hormigón alcanza
+                                los 18 metros de altura total. Es el primer símbolo que recibe al visitante al ingresar a la ciudad.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Cristo+de+la+Hermandad+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="plaza-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/plaza-colon.jpg"
+                                alt="Plaza Colón de Jardín América con el cartel de la ciudad y arboledas bajo la luz del sol"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="plaza-title">Plaza Colón</h3>
+                            <p>
+                                El corazón de Jardín América. Diseñada en 1967 por el arquitecto Fernando Juan Dasso,
+                                su geometría única combina cuadrados concéntricos con diagonales a 45°. Cuenta con
+                                cuatro pirámides de piedra basáltica con bajorrelieves históricos, espejo de agua y anfiteatro.
+                                Los domingos se convierte en escenario de los tradicionales Domingos Culturales con músicos,
+                                artesanos y emprendedores locales.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Plaza+Colón+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="parroquia-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/parroquia-cristo-redentor-nueva.jpg"
+                                alt="Fachada exterior de la Parroquia Cristo Redentor de Jardín América con su torre y cielo nublado"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="parroquia-title">Parroquia Cristo Redentor</h3>
+                            <p>
+                                Fundada en 1952 y construida entre 1964 y 1967, es el templo más importante de la ciudad.
+                                Su rasgo más llamativo son sus <strong>58 vitrales policromados</strong> que suman 125 m² de vidrio de color,
+                                diseñados por el arquitecto Fernando Dasso y fabricados en Porto Alegre. En su interior
+                                se venera una escultura del Cristo Redentor tallada en cedro colorado por el escultor tirolés
+                                Leo Moroder (1970), de 2,50 m y 300 kg.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Parroquia+Cristo+Redentor+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="cultura-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/casa-de-la-cultura.jpg"
+                                alt="Fachada de la Casa de la Cultura de Jardín América con ciclistas en la vereda"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="cultura-title">Casa de la Cultura</h3>
+                            <p>
+                                Espacio institucional donde se concentra la vida cultural y artística de Jardín América.
+                                Organiza exposiciones, talleres, espectáculos y encuentros comunitarios, en articulación
+                                con el área de Cultura y Turismo Municipal y la Secretaría de Estado de Cultura de Misiones.
+                                También sede del Centro Social y Cultural Germano Argentino, activo en la comunidad desde hace décadas.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Casa+de+la+Cultura+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="cooperativa-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/cooperativa-flor.webp"
+                                alt="Visita guiada en la Cooperativa Flor de Jardín: grupo de turistas aprendiendo sobre la producción de yerba mate"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="cooperativa-title">Cooperativa Flor de Jardín</h3>
+                            <p>
+                                Fundada en 1973, es una de las cooperativas agroindustriales más importantes de Misiones,
+                                con más de 180 productores asociados. Ubicada sobre la Ruta 12, es parada obligada para
+                                conocer y comprar productos regionales a precio de origen: yerba mate, encurtidos
+                                (sus pepinillos son famosos en todo el país), dulces artesanales y fécula de mandioca.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Cooperativa+Flor+de+Jardín+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                                <a href="https://instagram.com/flordejardinoficial" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-ig" aria-label="Instagram de la Cooperativa Flor de Jardín">📸 @flordejardinoficial</a>
+                                <a href="https://flordejardin.com.ar/" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Sitio web de la Cooperativa Flor de Jardín">🌐 Web</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="badenbaden-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/baden-baden.jpg"
+                                alt="Vista aérea del Complejo Baden Baden con piscinas, toboganes y vegetación selvática"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="badenbaden-title">Complejo Turístico Baden Baden</h3>
+                            <p>
+                                Con más de 28 años de trayectoria, es el complejo recreativo más reconocido de la zona.
+                                Sobre la Ruta 12, ofrece piscinas con guardavidas, tirolesa, trekking, mountain bike,
+                                cabalgatas, quinchos, restaurante y alojamiento en cabañas y camping.
+                                Gestionado por una familia de origen alemán con fuerte compromiso ambiental y con la selva misionera.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Complejo+Baden+Baden+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                                <a href="https://instagram.com/complejobaden" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-ig" aria-label="Instagram del Complejo Baden Baden">📸 @complejobaden</a>
+                                <a href="https://wa.me/543743482083" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-wa" aria-label="Contactar por WhatsApp">💬 WhatsApp</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="paraiso-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/paraiso-lodge.jpg"
+                                alt="Piscina del Paraíso Lodge rodeada de palmeras y vegetación selvática misionera"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="paraiso-title">Paraíso Lodge</h3>
+                            <p>
+                                A solo 4 km del centro, sobre el km 1445 de la Ruta 12 a orillas del Arroyo Tabay.
+                                Cuenta con más de 20 cabañas con balcón y vista directa al arroyo y la cascada,
+                                piscina, restaurante y desayuno incluido. Desde el lodge se puede llegar caminando
+                                a los Saltos del Tabay en unos 25 minutos por sendero selvático.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Paraíso+Lodge+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                                <a href="https://instagram.com/paraisolodgelima" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-ig" aria-label="Instagram del Paraíso Lodge">📸 @paraisolodgelima</a>
+                                <a href="https://wa.me/5491123668814" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-wa" aria-label="Contactar por WhatsApp">💬 WhatsApp</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="local-card reveal" role="listitem" aria-labelledby="ysiry-title">
+                        <div class="local-card-img">
+                            <img
+                                src="img/ysiry.jpg"
+                                alt="Complejo Natural Ysirý con cascadas y vegetación selvática en Jardín América"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="local-card-body">
+                            <h3 id="ysiry-title">Complejo Natural Ysirý</h3>
+                            <p>
+                                "Ysirý" significa <em>agua que corre</em> en guaraní. Emprendimiento familiar inaugurado
+                                en 2018 en 15 hectáreas de naturaleza misionera. Cuenta con piscinas alimentadas por
+                                manantiales naturales, camping, cantina, animales en semilibertad y un salón de eventos
+                                climatizado para 220 personas. Abierto todos los días desde las 8 hs.
+                            </p>
+                            <div class="local-card-actions">
+                                <a href="https://maps.google.com/?q=Complejo+Natural+Ysiry+Jardín+América+Misiones" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-map" aria-label="Ver ubicación en Google Maps">📍 Ubicación</a>
+                                <a href="https://instagram.com/complejonaturalysiry" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-ig" aria-label="Instagram del Complejo Natural Ysirý">📸 @complejonaturalysiry</a>
+                                <a href="https://wa.me/5493743410273" target="_blank" rel="noopener noreferrer" class="lc-btn lc-btn-wa" aria-label="Contactar por WhatsApp">💬 WhatsApp</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================
+             QUÉ VISITAR DESDE JARDÍN AMÉRICA
+        ============================= -->
+        <section id="que-visitar-provincia" aria-labelledby="prov-title">
+            <div class="container">
+
+                <header class="section-header">
+                    <p class="section-badge">Excursiones desde aquí</p>
+                    <h2 class="section-title" id="prov-title">Qué visitar desde Jardín América</h2>
+                    <p class="section-subtitle">
+                        La Ruta 12 es tu autopista hacia las maravillas naturales e históricas de Misiones.
+                        Todos los grandes atractivos de la provincia están a poca distancia.
+                    </p>
+                </header>
+
+                <div class="province-grid" role="list">
+
+                    <!-- CATARATAS DEL IGUAZÚ -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="iguazu-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="img/cataratas-iguazu.jpg"
+                                alt="Vista panorámica de las Cataratas del Iguazú desde las pasarelas del circuito inferior, con la bruma de las cascadas y la selva"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">200 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="iguazu-title">Cataratas del Iguazú</h3>
+                            <p class="prov-location">Puerto Iguazú, Misiones</p>
+                            <p>
+                                Una de las Siete Maravillas Naturales del Mundo y Patrimonio de la Humanidad (UNESCO).
+                                Más de 275 saltos de agua de hasta 80 metros de altura en plena selva subtropical.
+                                La Garganta del Diablo y los circuitos superior e inferior son experiencias imborrables.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 200 kilómetros, aproximadamente 2 horas y media en auto">
+                                    <span aria-hidden="true">🚗</span> 200 km · ~2 h 30 min
+                                </span>
+                                <a
+                                    href="https://www.iguazuargentina.com"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Visitar sitio oficial de Cataratas del Iguazú (abre en nueva pestaña)"
+                                >
+                                    Sitio web <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SAN IGNACIO MINI -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="sanignacio-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="img/san-ignacio.jpg"
+                                alt="Ruinas jesuíticas de San Ignacio Mini iluminadas bajo un cielo estrellado, con las torres de piedra roja al fondo"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">40 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="sanignacio-title">Ruinas de San Ignacio Mini</h3>
+                            <p class="prov-location">San Ignacio, Misiones</p>
+                            <p>
+                                El sitio arqueológico más importante de Argentina y Patrimonio de la Humanidad (UNESCO).
+                                Las ruinas de esta misión jesuítica-guaraní del siglo XVII cuentan una historia fascinante.
+                                De noche, el espectáculo de luz y sonido es absolutamente imperdible.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 40 kilómetros, aproximadamente 30 minutos en auto">
+                                    <span aria-hidden="true">🚗</span> 40 km · ~30 min
+                                </span>
+                                <a
+                                    href="https://misiones.tur.ar/caminodelosjesuitas/"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Ver información sobre las Ruinas de San Ignacio Mini (abre en nueva pestaña)"
+                                >
+                                    Más info <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SALTOS DEL MOCONÁ -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="mocona-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="img/mocona.webp"
+                                alt="Turistas en lancha frente a los Saltos del Moconá, apreciando las enormes cascadas longitudinales sobre el río Uruguay"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">200 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="mocona-title">Saltos del Moconá</h3>
+                            <p class="prov-location">El Soberbio, Misiones</p>
+                            <p>
+                                Un fenómeno natural único en el mundo: cascatas longitudinales de hasta 3 km de largo
+                                sobre el río Uruguay. Ubicados en el Parque Provincial Moconá, en plena selva virgen.
+                                La mejor época para visitarlos es cuando el río baja su caudal.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 200 kilómetros, aproximadamente 3 horas en auto">
+                                    <span aria-hidden="true">🚗</span> 200 km · ~3 h
+                                </span>
+                                <a
+                                    href="https://misiones.tur.ar/mocona/"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Ver información sobre los Saltos del Moconá (abre en nueva pestaña)"
+                                >
+                                    Más info <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MINAS DE WANDA -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="wanda-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=700&q=85"
+                                alt="Cristales de amatista de color violeta intenso y cuarzo brillante, gemas semipreciosas de las minas de Misiones"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">165 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="wanda-title">Minas de Wanda</h3>
+                            <p class="prov-location">Wanda, Misiones</p>
+                            <p>
+                                Las únicas minas de piedras semipreciosas abiertas al turismo en Argentina.
+                                Amatistas, cuarzos, ágatas y otras gemas de extraordinaria belleza se extraen
+                                del subsuelo misionero. Un paseo geológico fascinante para toda la familia.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 165 kilómetros, aproximadamente 2 horas en auto">
+                                    <span aria-hidden="true">🚗</span> 165 km · ~2 h
+                                </span>
+                                <a
+                                    href="https://misiones.tur.ar/actividad/compania-minera-wanda/"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Ver información sobre las Minas de Wanda (abre en nueva pestaña)"
+                                >
+                                    Más info <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SALTO ENCANTADO -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="encantado-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="https://picsum.photos/seed/salto-encantado/700/460"
+                                alt="Salto Encantado: cascada de 64 metros de altura rodeada de selva misionera en el Valle del Cuñá Pirú"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">60 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="encantado-title">Salto Encantado</h3>
+                            <p class="prov-location">Aristóbulo del Valle, Misiones</p>
+                            <p>
+                                Una de las cascadas más impresionantes de Misiones, con una caída de 64 metros en el corazón
+                                del Parque Provincial Valle del Cuñá Pirú. Rodeada de selva nativa, es ideal para el
+                                trekking y la contemplación de la naturaleza en estado puro.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 60 kilómetros, aproximadamente 1 hora en auto">
+                                    <span aria-hidden="true">🚗</span> 60 km · ~1 h
+                                </span>
+                                <a
+                                    href="https://misiones.tur.ar/encantado/"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Ver información sobre el Salto Encantado (abre en nueva pestaña)"
+                                >
+                                    Más info <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PARQUE TEMÁTICO DE LA CRUZ -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="santaana-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="img/parque-cruz-noche.jpg"
+                                alt="Parque Temático de la Cruz en Santa Ana iluminado de noche bajo un cielo estrellado"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">45 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="santaana-title">Parque Temático de la Cruz</h3>
+                            <p class="prov-location">Santa Ana, Misiones</p>
+                            <p>
+                                Un parque temático y espiritual ubicado en Santa Ana, con una imponente cruz
+                                que domina el paisaje misionero. Ofrece recorridos al aire libre, miradores
+                                con vistas a la selva y al río Paraná, y un entorno de paz ideal para
+                                visitas en familia o en grupo.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 45 kilómetros, aproximadamente 35 minutos en auto">
+                                    <span aria-hidden="true">🚗</span> 45 km · ~35 min
+                                </span>
+                                <a
+                                    href="https://misiones.tur.ar/cruz/"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Ver información sobre el Parque Temático de la Cruz (abre en nueva pestaña)"
+                                >
+                                    Más info <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- POSADAS -->
+                    <article class="prov-card reveal" role="listitem" aria-labelledby="posadas-title">
+                        <div class="prov-card-img">
+                            <img
+                                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=700&q=85"
+                                alt="Costanera iluminada al atardecer sobre el río Paraná con reflejos dorados en el agua"
+                                loading="lazy"
+                                width="700"
+                                height="460"
+                            >
+                            <span class="prov-dist-badge" aria-hidden="true">100 km</span>
+                        </div>
+                        <div class="prov-card-body">
+                            <h3 id="posadas-title">Posadas — Capital provincial</h3>
+                            <p class="prov-location">Posadas, Misiones</p>
+                            <p>
+                                La capital provincial sobre el río Paraná, conocida por su vibrante costanera,
+                                la Bajada Vieja y la Pasarela Internacional que la une con Encarnación, Paraguay.
+                                Ciudad universitaria, cultural y gastronómica con amplia infraestructura turística.
+                            </p>
+                            <div class="prov-card-footer">
+                                <span class="prov-dist-text" aria-label="Distancia: 100 kilómetros, aproximadamente 1 hora y 15 minutos en auto">
+                                    <span aria-hidden="true">🚗</span> 100 km · ~1 h 15 min
+                                </span>
+                                <a
+                                    href="https://www.turismoposadas.tur.ar/"
+                                    class="card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Visitar sitio de turismo de Posadas (abre en nueva pestaña)"
+                                >
+                                    Más info <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN INFORMACIÓN DE INTERÉS -->
+        <section id="informacion" aria-labelledby="info-util-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-badge">Jardín América</span>
+                    <h2 class="section-title" id="info-util-title">Información de interés</h2>
+                    <p class="section-subtitle">Horarios de colectivos, alojamientos y opciones gastronómicas en la ciudad.</p>
+                </header>
+
+                <!-- PESTAÑAS -->
+                <div class="info-tabs" role="tablist" aria-label="Categorías de información">
+                    <button class="info-tab-btn active" role="tab" aria-selected="true"  aria-controls="panel-colectivos"  id="tab-colectivos">
+                        <span class="tab-icon" aria-hidden="true">🚌</span> Colectivos
+                    </button>
+                    <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="panel-alojamientos" id="tab-alojamientos">
+                        <span class="tab-icon" aria-hidden="true">🏨</span> Alojamientos
+                    </button>
+                    <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="panel-gastronomia"  id="tab-gastronomia">
+                        <span class="tab-icon" aria-hidden="true">🍽️</span> Gastronomía
+                    </button>
+                </div>
+
+                <!-- PANEL: COLECTIVOS -->
+                <div class="info-panel active" id="panel-colectivos" role="tabpanel" aria-labelledby="tab-colectivos">
+
+                    <!-- A POSADAS -->
+                    <div class="colectivos-empresa reveal">
+                        <h3><span aria-hidden="true">📍</span> A Posadas — Lunes a Viernes</h3>
+                        <div style="overflow-x:auto">
+                            <table class="tabla-colectivos">
+                                <thead>
+                                    <tr>
+                                        <th>Empresa</th>
+                                        <th>Horario</th>
+                                        <th>Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td data-label="Empresa">Kruse</td><td data-label="Horario">5:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">6:40 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">El Cometa</td><td data-label="Horario">7:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">7:45 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">8:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Oro Verde</td><td data-label="Horario">9:20 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">9:50 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">10:45 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">10:45 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">11:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">11:35 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">12:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">12:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Oro Verde</td><td data-label="Horario">12:50 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">13:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">13:40 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">14:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">15:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">15:50 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">16:45 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">16:50 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">17:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">El Cometa</td><td data-label="Horario">17:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Águila Dorada</td><td data-label="Horario">17:40 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">18:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Kruse</td><td data-label="Horario">18:20 hs</td><td data-label="Notas">—</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- A IGUAZÚ -->
+                    <div class="colectivos-empresa reveal">
+                        <h3><span aria-hidden="true">📍</span> A Iguazú — Lunes a Viernes</h3>
+                        <div style="overflow-x:auto">
+                            <table class="tabla-colectivos">
+                                <thead>
+                                    <tr>
+                                        <th>Empresa</th>
+                                        <th>Horario</th>
+                                        <th>Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">5:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">6:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">7:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">7:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">8:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">9:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">9:40 hs</td><td data-label="Notas">Hasta Eldorado; por Ruta 17 llega a Bernardo de Irigoyen</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">10:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">10:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">11:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">11:20 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">11:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">11:50 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Río Uruguay</td><td data-label="Horario">12:40 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">13:15 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">13:20 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">15:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Kruse</td><td data-label="Horario">15:00 hs</td><td data-label="Notas">Andresito directo</td></tr>
+                                    <tr><td data-label="Empresa">El Cometa</td><td data-label="Horario">16:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Horianski</td><td data-label="Horario">16:30 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Argentinita</td><td data-label="Horario">17:00 hs</td><td data-label="Notas">—</td></tr>
+                                    <tr><td data-label="Empresa">Crucero del Norte</td><td data-label="Horario">17:20 hs</td><td data-label="Notas">San Antonio directo</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- LOCALIDADES RUTA 14 -->
+                    <div class="colectivos-empresa reveal">
+                        <h3><span aria-hidden="true">📍</span> Localidades por Ruta N° 14 — Lunes a Viernes</h3>
+                        <div style="overflow-x:auto">
+                            <table class="tabla-colectivos">
+                                <thead>
+                                    <tr>
+                                        <th>Destino</th>
+                                        <th>Empresa</th>
+                                        <th>Horario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td data-label="Destino">San Vicente</td><td data-label="Empresa">Horianski</td><td data-label="Horario">8:00 hs</td></tr>
+                                    <tr><td data-label="Destino">A. del Valle</td><td data-label="Empresa">El Misionero</td><td data-label="Horario">9:30 hs</td></tr>
+                                    <tr><td data-label="Destino">25 de Mayo</td><td data-label="Empresa">Horianski</td><td data-label="Horario">10:30 hs</td></tr>
+                                    <tr><td data-label="Destino">San Vicente</td><td data-label="Empresa">Horianski</td><td data-label="Horario">11:15 hs</td></tr>
+                                    <tr><td data-label="Destino">A. del Valle</td><td data-label="Empresa">El Cometa</td><td data-label="Horario">12:30 hs</td></tr>
+                                    <tr><td data-label="Destino">25 de Mayo</td><td data-label="Empresa">Horianski</td><td data-label="Horario">13:15 hs</td></tr>
+                                    <tr><td data-label="Destino">El Soberbio</td><td data-label="Empresa">El Cometa</td><td data-label="Horario">16:15 hs</td></tr>
+                                    <tr><td data-label="Destino">A. del Valle</td><td data-label="Empresa">Horianski</td><td data-label="Horario">17:00 hs</td></tr>
+                                    <tr><td data-label="Destino">San Vicente</td><td data-label="Empresa">Horianski</td><td data-label="Horario">19:15 hs</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p class="reveal" style="font-size:.85rem;color:var(--c-text-muted);margin-top:1rem;">
+                        ⚠️ Los horarios son orientativos y pueden variar. Consultá en la terminal o con cada empresa antes de viajar. Fuente: Municipalidad de Jardín América.
+                    </p>
+                </div>
+
+                <!-- PANEL: ALOJAMIENTOS -->
+                <div class="info-panel" id="panel-alojamientos" role="tabpanel" aria-labelledby="tab-alojamientos">
+                    <div class="info-cards-grid">
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🌊</div>
+                                <div>
+                                    <p class="info-card-title">Saltos del Tabay</p>
+                                    <span class="info-card-tipo">Cabañas · Dormis</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Saltos del Tabay, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (3743) 400-421</p>
+                                <p><span class="ic" aria-hidden="true">ℹ️</span> Alojamiento en el predio de los Saltos del Tabay, en pleno contacto con la naturaleza.</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🏨</div>
+                                <div>
+                                    <p class="info-card-title">Hotel y Cabañas Las Azaleas</p>
+                                    <span class="info-card-tipo">Hotel · Cabañas</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Ruta Nacional 12, Km 1443 (acceso Saltos del Tabay)</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> +54 3743 444-378</p>
+                                <p><span class="ic" aria-hidden="true">✉️</span> lasazaleastabay@gmail.com</p>
+                                <p><span class="ic" aria-hidden="true">ℹ️</span> 6 habitaciones y 4 cabañas (hasta 42 personas). Piscina, parque arbolado, parrillas. A 1,5 km de la cascada.</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🏕️</div>
+                                <div>
+                                    <p class="info-card-title">Baden Baden Cabañas y Camping</p>
+                                    <span class="info-card-tipo">Cabañas · Camping</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Ruta Nacional 12, Km 1435, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 482-081 / 482-083 / 460-923</p>
+                                <p><span class="ic" aria-hidden="true">✉️</span> hola@complejobadenbaden.com.ar</p>
+                                <p><span class="ic" aria-hidden="true">ℹ️</span> Cabañas, departamentos, albergue y camping. Piscinas con toboganes, guardavidas, restaurante y quinchos.</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🏠</div>
+                                <div>
+                                    <p class="info-card-title">Complejo América</p>
+                                    <span class="info-card-tipo">Hotel · Apart · Cabañas</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Av. Aconcagua 638/652, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 460-521 / 469-960</p>
+                                <p><span class="ic" aria-hidden="true">📱</span> WhatsApp: +54 9 3743 411-441</p>
+                                <p><span class="ic" aria-hidden="true">ℹ️</span> Hotel, apartamentos y cabañas (hasta 6 personas). Piscina, jacuzzi, canchas deportivas, juegos infantiles y estacionamiento.</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🌿</div>
+                                <div>
+                                    <p class="info-card-title">Paraíso Lodge</p>
+                                    <span class="info-card-tipo">Cabañas · Lodge</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Ruta Nacional 12, Km 1445 (Arroyo Tabay)</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 460-517 / 467-227</p>
+                                <p><span class="ic" aria-hidden="true">📱</span> WhatsApp: +54 9 3764 307-029</p>
+                                <p><span class="ic" aria-hidden="true">ℹ️</span> Más de 20 cabañas (hasta 8 personas) con balcones sobre el Arroyo Tabay. Piscina, jacuzzis, bar, restaurante y camping.</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🛖</div>
+                                <div>
+                                    <p class="info-card-title">Cabañas El Ciprés</p>
+                                    <span class="info-card-tipo">Cabañas</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Ernesto Sábato 430, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> +54 374 344-0582</p>
+                                <p><span class="ic" aria-hidden="true">✉️</span> duplexelcipres25@gmail.com</p>
+                                <p><span class="ic" aria-hidden="true">ℹ️</span> Cabañas tipo dúplex en zona urbana, capacidad para 6 a 20 personas.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                    <p class="reveal" style="font-size:.85rem;color:var(--c-text-muted);margin-top:1.5rem;">
+                        ⚠️ Confirmá disponibilidad y precios directamente con cada establecimiento antes de reservar.
+                    </p>
+                </div>
+
+                <!-- PANEL: GASTRONOMÍA -->
+                <div class="info-panel" id="panel-gastronomia" role="tabpanel" aria-labelledby="tab-gastronomia">
+                    <div class="info-cards-grid">
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🥩</div>
+                                <div>
+                                    <p class="info-card-title">Parrilla Don Amado</p>
+                                    <span class="info-card-tipo">Parrilla</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Av. San Martín 450, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 15-000010</p>
+                                <p><span class="ic" aria-hidden="true">🕐</span> Mar a Dom · 12:00 – 15:00 · 20:00 – 24:00</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🍕</div>
+                                <div>
+                                    <p class="info-card-title">Pizzería El Hornero</p>
+                                    <span class="info-card-tipo">Pizzería</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Calle Corrientes 120, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 15-000011</p>
+                                <p><span class="ic" aria-hidden="true">🕐</span> Lun a Dom · 19:00 – 24:00</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">☕</div>
+                                <div>
+                                    <p class="info-card-title">Café Central</p>
+                                    <span class="info-card-tipo">Cafetería</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Plaza Colón s/n, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 15-000012</p>
+                                <p><span class="ic" aria-hidden="true">🕐</span> Todos los días · 07:00 – 22:00</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🍗</div>
+                                <div>
+                                    <p class="info-card-title">Rancho Misionero</p>
+                                    <span class="info-card-tipo">Restaurante</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Ruta 12 km 1104, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 15-000013</p>
+                                <p><span class="ic" aria-hidden="true">🕐</span> Mar a Dom · 12:00 – 15:00 · 19:00 – 23:00</p>
+                            </div>
+                        </article>
+
+                        <article class="info-card reveal">
+                            <div class="info-card-header">
+                                <div class="info-card-icon" aria-hidden="true">🍔</div>
+                                <div>
+                                    <p class="info-card-title">Burger Selva</p>
+                                    <span class="info-card-tipo">Hamburguesas</span>
+                                </div>
+                            </div>
+                            <div class="info-card-body">
+                                <p><span class="ic" aria-hidden="true">📍</span> Av. Libertad 300, Jardín América</p>
+                                <p><span class="ic" aria-hidden="true">📞</span> (03743) 15-000014</p>
+                                <p><span class="ic" aria-hidden="true">🕐</span> Lun a Dom · 18:00 – 01:00</p>
+                            </div>
+                        </article>
+
+                    </div>
+                    <p class="reveal" style="font-size:.85rem;color:var(--c-text-muted);margin-top:1.5rem;">
+                        ⚠️ Información orientativa. Consultá horarios actualizados antes de visitar.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Jardín América Turismo</h2>
+                    <p>
+                        Descubrí la belleza natural de Jardín América y la provincia de Misiones.
+                        Cascadas, selva subtropical, historia jesuítica y cultura misionera en el corazón de Argentina.
+                    </p>
+                </div>
+                <nav class="footer-col" aria-label="Secciones del sitio">
+                    <h3>Secciones</h3>
+                    <ul role="list">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#que-visitar-local">Qué visitar aquí</a></li>
+                        <li><a href="#que-visitar-provincia">Qué visitar desde aquí</a></li>
+                        <li><a href="#informacion">Información útil</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-col">
+                    <h3>Información</h3>
+                    <p>Jardín América, Misiones</p>
+                    <p>Argentina</p>
+                    <p>Ruta Nacional 12</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Jardín América Turismo. Sitio de información turística.</p>
+                <p>Imágenes: Unsplash (licencia libre)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Declaración global (usada en carrusel y reveal)
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // === NAVBAR: efecto al hacer scroll ===
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // === MENÚ MÓVIL ===
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu   = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú de navegación');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', e => {
+            if (!navbar.contains(e.target)) {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // === ENLACE ACTIVO AL HACER SCROLL ===
+        const sections  = document.querySelectorAll('section[id]');
+        const navLinks  = document.querySelectorAll('.nav-link');
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        const active = link.getAttribute('href') === `#${id}`;
+                        link.classList.toggle('active', active);
+                        link.setAttribute('aria-current', active ? 'page' : 'false');
+                    });
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+
+        sections.forEach(s => sectionObserver.observe(s));
+
+        // === MODAL GALERÍA: SALTOS DEL TABAY ===
+        (function () {
+            const overlay   = document.getElementById('galeria-modal');
+            const btnAbrir  = document.getElementById('btn-abrir-galeria');
+            const btnCerrar = document.getElementById('btn-cerrar-galeria');
+            let lastFocus;
+
+            function abrir() {
+                lastFocus = document.activeElement;
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                btnCerrar.focus();
+                // Recalcular posición del carrusel al abrir (offsetWidth disponible)
+                requestAnimationFrame(() => {
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(-${current * galeriaEl.offsetWidth}px)`;
+                    requestAnimationFrame(() => { track.style.transition = ''; });
+                });
+            }
+            function cerrar() {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            btnAbrir.addEventListener('click', abrir);
+            btnCerrar.addEventListener('click', cerrar);
+            overlay.addEventListener('click', e => { if (e.target === overlay) cerrar(); });
+            overlay.addEventListener('keydown', e => { if (e.key === 'Escape') cerrar(); });
+
+            // Carrusel dentro del modal
+            const galeriaEl = overlay.querySelector('.galeria-carousel');
+            const track     = galeriaEl.querySelector('.carousel-track');
+            const slides    = galeriaEl.querySelectorAll('.carousel-slide');
+            const dotsWrap  = galeriaEl.querySelector('.carousel-dots');
+            const counter   = galeriaEl.querySelector('.carousel-counter');
+            const total     = slides.length;
+            let current = 0;
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', `Foto ${i + 1} de ${total}`);
+                dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+                dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            function goTo(index) {
+                slides[current].setAttribute('aria-hidden', 'true');
+                current = ((index % total) + total) % total;
+                track.style.transform = `translateX(-${current * galeriaEl.offsetWidth}px)`;
+                counter.textContent = `${current + 1} / ${total}`;
+                slides[current].removeAttribute('aria-hidden');
+                dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                    d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+                });
+            }
+
+            galeriaEl.querySelector('.carousel-prev').addEventListener('click', () => goTo(current - 1));
+            galeriaEl.querySelector('.carousel-next').addEventListener('click', () => goTo(current + 1));
+
+            galeriaEl.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft')  goTo(current - 1);
+                if (e.key === 'ArrowRight') goTo(current + 1);
+            });
+
+            let touchX = null;
+            galeriaEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+            galeriaEl.addEventListener('touchend', e => {
+                if (touchX === null) return;
+                const diff = touchX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+                touchX = null;
+            });
+        })();
+
+        // === MODAL GALERÍA: DORMIS DEL TABAY ===
+        (function () {
+            const overlay   = document.getElementById('dormis-modal');
+            const btnAbrir  = document.getElementById('btn-abrir-dormis');
+            const btnCerrar = document.getElementById('btn-cerrar-dormis');
+            let lastFocus;
+
+            function abrir() {
+                lastFocus = document.activeElement;
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                btnCerrar.focus();
+                requestAnimationFrame(() => {
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(-${current * galeriaEl.offsetWidth}px)`;
+                    requestAnimationFrame(() => { track.style.transition = ''; });
+                });
+            }
+            function cerrar() {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            btnAbrir.addEventListener('click', abrir);
+            btnCerrar.addEventListener('click', cerrar);
+            overlay.addEventListener('click', e => { if (e.target === overlay) cerrar(); });
+            overlay.addEventListener('keydown', e => { if (e.key === 'Escape') cerrar(); });
+
+            const galeriaEl = overlay.querySelector('.galeria-carousel');
+            const track     = galeriaEl.querySelector('.carousel-track');
+            const slides    = galeriaEl.querySelectorAll('.carousel-slide');
+            const dotsWrap  = galeriaEl.querySelector('.carousel-dots');
+            const counter   = galeriaEl.querySelector('.carousel-counter');
+            const total     = slides.length;
+            let current = 0;
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', `Foto ${i + 1} de ${total}`);
+                dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+                dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            function goTo(index) {
+                slides[current].setAttribute('aria-hidden', 'true');
+                current = ((index % total) + total) % total;
+                track.style.transform = `translateX(-${current * galeriaEl.offsetWidth}px)`;
+                counter.textContent = `${current + 1} / ${total}`;
+                slides[current].removeAttribute('aria-hidden');
+                dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                    d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+                });
+            }
+
+            galeriaEl.querySelector('.carousel-prev').addEventListener('click', () => goTo(current - 1));
+            galeriaEl.querySelector('.carousel-next').addEventListener('click', () => goTo(current + 1));
+
+            galeriaEl.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft')  goTo(current - 1);
+                if (e.key === 'ArrowRight') goTo(current + 1);
+            });
+
+            let touchX = null;
+            galeriaEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+            galeriaEl.addEventListener('touchend', e => {
+                if (touchX === null) return;
+                const diff = touchX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+                touchX = null;
+            });
+        })();
+
+        // === MODAL: SALTOS DEL TABAY ===
+        (function () {
+            const overlay    = document.getElementById('tabay-modal');
+            const btnAbrir   = document.getElementById('btn-abrir-modal');
+            const btnCerrar  = document.getElementById('btn-cerrar-modal');
+            let lastFocus;
+
+            function abrir() {
+                lastFocus = document.activeElement;
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                btnCerrar.focus();
+            }
+
+            function cerrar() {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            btnAbrir.addEventListener('click', abrir);
+            btnCerrar.addEventListener('click', cerrar);
+            overlay.addEventListener('click', e => { if (e.target === overlay) cerrar(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) cerrar(); });
+
+            // Trampa de foco (accesibilidad)
+            overlay.addEventListener('keydown', e => {
+                if (e.key !== 'Tab' || !overlay.classList.contains('open')) return;
+                const focusables = Array.from(overlay.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])')).filter(el => !el.closest('[aria-hidden]'));
+                const first = focusables[0];
+                const last  = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            });
+        })();
+
+        // === PESTAÑAS: INFORMACIÓN DE INTERÉS ===
+        document.querySelectorAll('.info-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Desactivar todos
+                document.querySelectorAll('.info-tab-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                document.querySelectorAll('.info-panel').forEach(p => p.classList.remove('active'));
+
+                // Activar el seleccionado
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+
+                // Disparar reveal en elementos del panel recién mostrado
+                if (!prefersReducedMotion) {
+                    document.querySelectorAll('#' + btn.getAttribute('aria-controls') + ' .reveal:not(.visible)').forEach(el => {
+                        setTimeout(() => el.classList.add('visible'), 50);
+                    });
+                }
+            });
+        });
+
+        // === SCROLL REVEAL (respeta prefers-reduced-motion) ===
+        if (!prefersReducedMotion) {
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        } else {
+            // Si el usuario prefiere sin animaciones, mostramos todo directamente
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
+    </script>
+
+</body>
+</html>
