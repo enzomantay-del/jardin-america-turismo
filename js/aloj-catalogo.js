@@ -265,8 +265,8 @@
     var act = document.querySelector(".aloj-filtros--tur .aloj-btn.activo");
     if (act) {
       var oc = act.getAttribute("onclick") || "";
-      var tipo = "registrados";
-      if (oc.indexOf("'todos'") >= 0) tipo = "todos";
+      var tipo = "todos";
+      if (oc.indexOf("'registrados'") >= 0) tipo = "registrados";
       else if (oc.indexOf("'pileta'") >= 0) tipo = "pileta";
       window.filtrarAloj(tipo, act);
     } else {
@@ -280,12 +280,14 @@
       typeof listasAloj === "object" && !Array.isArray(listasAloj)
         ? Object.values(listasAloj)
         : listasAloj;
-    var clean = raw.filter(Boolean);
+    var clean = raw.filter(function (x) {
+      return x && (x.n || "").trim();
+    });
     if (!clean.length) return;
     window.ALOJ.length = 0;
     clean.forEach(function (x) {
       var o = window.normalizeAlojItem(x);
-      window.ALOJ.push(o);
+      if (o.activo !== false) window.ALOJ.push(o);
     });
     window.inicializarCatalogoAloj();
   };
