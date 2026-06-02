@@ -262,13 +262,11 @@
     if (c)
       c.textContent =
         "(" + window.ALOJ.filter(function (a) { return a.activo !== false; }).length + ")";
-    var act = document.querySelector(".aloj-filtros--tur .aloj-btn.activo");
-    if (act) {
-      var oc = act.getAttribute("onclick") || "";
-      var tipo = "todos";
-      if (oc.indexOf("'registrados'") >= 0) tipo = "registrados";
-      else if (oc.indexOf("'pileta'") >= 0) tipo = "pileta";
-      window.filtrarAloj(tipo, act);
+    var todosBtn =
+      document.querySelector('.aloj-filtros--tur .aloj-btn[onclick*="todos"]') ||
+      document.querySelector('.aloj-filtros--tur .aloj-btn[onclick*=\'todos\']');
+    if (todosBtn) {
+      window.filtrarAloj("todos", todosBtn);
     } else {
       window.renderAloj(window.ALOJ);
     }
@@ -289,6 +287,15 @@
       var o = window.normalizeAlojItem(x);
       if (o.activo !== false) window.ALOJ.push(o);
     });
+    if (
+      window.ALOJ.length === 0 &&
+      window.ALOJ_EMBEDDED &&
+      window.ALOJ_EMBEDDED.length
+    ) {
+      window.ALOJ_EMBEDDED.forEach(function (x) {
+        window.ALOJ.push(window.normalizeAlojItem(x));
+      });
+    }
     window.inicializarCatalogoAloj();
   };
 })();
