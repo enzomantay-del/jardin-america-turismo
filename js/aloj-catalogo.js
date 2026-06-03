@@ -164,7 +164,7 @@
       acc +=
         '<a class="aloj-detalle-btn aloj-detalle-btn--map" href="' +
         esc(a.mapsUrl) +
-        '" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📍</span> Ver en mapa</a>";
+        '" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📍</span> Ver en mapa</a>"';
     if (acc)
       body += '<div class="aloj-detalle-acciones">' + acc + "</div>";
     document.getElementById("aloj-detalle-body").innerHTML = body;
