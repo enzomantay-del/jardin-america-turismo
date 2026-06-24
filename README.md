@@ -1,22 +1,28 @@
-# Jardín América Turismo
+# Turismo Jardín América
 
-Sitio web turístico estático para promocionar los destinos y atractivos de Jardín América, Misiones, Argentina.
+Sitio web turístico de **Jardín América, Misiones, Argentina**. Promociona atractivos naturales, circuitos, alojamientos y actividades de la ciudad.
 
-## 📋 Funcionalidades
+## Demo en vivo
 
-- Presentación de atractivos turísticos locales
-- Galería de fotos
-- Información de contacto
-- Diseño responsive para dispositivos móviles
+**[enzomantay-del.github.io/jardin-america-turismo](https://enzomantay-del.github.io/jardin-america-turismo/)**
 
-## 🛠️ Tecnologías
+Integrado al [Portal Municipal de Jardín América](https://github.com/enzomantay-del/portal-municipal-jardin-america) como enlace oficial de información turística.
 
-- HTML5
-- CSS3
-- JavaScript
+## Funcionalidades
 
-## 👤 Autor
+- Landing con hero, atractivos destacados y llamadas a la acción
+- Secciones de destinos, naturaleza y experiencias locales
+- Diseño responsive para móvil y escritorio
+- Imágenes optimizadas para carga rápida
+- Publicado en GitHub Pages
 
-**Enzo Gabriel Mantay**
-Director de Turismo — Jardín América, Misiones, Argentina
-[LinkedIn](https://linkedin.com/in/enzomantay)
+## Tecnologías
+
+- HTML5, CSS3, JavaScript
+- GitHub Pages (hosting)
+- Sharp (optimización de imágenes en desarrollo)
+
+## Autor
+
+**Enzo Mantay** — Director de Turismo, Jardín América  
+[Portfolio](https://enzomantay-del.github.io) · [GitHub](https://github.com/enzomantay-del)
