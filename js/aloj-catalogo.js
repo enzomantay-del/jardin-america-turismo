@@ -262,13 +262,17 @@
     if (c)
       c.textContent =
         "(" + window.ALOJ.filter(function (a) { return a.activo !== false; }).length + ")";
-    var todosBtn =
-      document.querySelector('.aloj-filtros--tur .aloj-btn[onclick*="todos"]') ||
-      document.querySelector('.aloj-filtros--tur .aloj-btn[onclick*=\'todos\']');
-    if (todosBtn) {
-      window.filtrarAloj("todos", todosBtn);
+    var regBtn =
+      document.querySelector('.aloj-filtros--tur .aloj-btn[onclick*="registrados"]') ||
+      document.querySelector('.aloj-filtros--tur .aloj-btn[onclick*=\'registrados\']') ||
+      document.querySelector('.aloj-filtros .aloj-btn[onclick*="registrados"]');
+    if (regBtn) {
+      window.filtrarAloj("registrados", regBtn);
     } else {
-      window.renderAloj(window.ALOJ);
+      var registrados = window.ALOJ.filter(function (a) {
+        return a.activo !== false && a.r;
+      });
+      window.renderAloj(registrados.length ? registrados : window.ALOJ);
     }
   };
 

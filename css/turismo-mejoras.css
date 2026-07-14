@@ -1,10 +1,6 @@
-/* Mejoras turismo — capas extras sin tocar el CSS monolítico base */
-:root {
-  --tm-quick-bg: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 55%, #f8fafc 100%);
-}
-
+/* Mejoras turismo — UI compacta, sin romper el menú */
 .tm-quick {
-  background: var(--tm-quick-bg);
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 55%, #f8fafc 100%);
   border-bottom: 1px solid var(--c-border, #e2e8f0);
   padding: 1.1rem 0 1.25rem;
 }
@@ -15,8 +11,17 @@
   padding: 0 1.25rem;
 }
 
+.tm-quick-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
 .tm-quick-kicker {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.25rem;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -25,10 +30,37 @@
 }
 
 .tm-quick h2 {
-  margin: 0 0 0.85rem;
+  margin: 0;
   font-family: var(--f-heading, inherit);
   font-size: clamp(1.05rem, 2.4vw, 1.35rem);
   color: var(--c-primary-dark, #0f5c3a);
+}
+
+.tm-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.tm-lang-btn {
+  appearance: none;
+  min-width: 2.25rem;
+  border: 1px solid rgba(15, 92, 58, 0.3);
+  background: #fff;
+  color: var(--c-primary-dark, #0f5c3a);
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tm-lang-btn.is-active {
+  background: var(--c-primary-dark, #0f5c3a);
+  border-color: var(--c-primary-dark, #0f5c3a);
+  color: #fff;
 }
 
 .tm-quick-grid {
@@ -73,52 +105,6 @@
   font-size: 0.78rem;
   color: var(--c-text-muted, #64748b);
   line-height: 1.35;
-}
-
-.tm-facts {
-  margin: 1rem 0 0;
-  padding: 0.9rem 1rem;
-  border-radius: 12px;
-  background: #f8fafc;
-  border: 1px solid var(--c-border, #e2e8f0);
-}
-
-.tm-facts h4 {
-  margin: 0 0 0.55rem;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--c-primary-dark, #0f5c3a);
-}
-
-.tm-facts dl {
-  margin: 0;
-  display: grid;
-  gap: 0.45rem;
-}
-
-.tm-facts div {
-  display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 0.5rem;
-  font-size: 0.84rem;
-  line-height: 1.4;
-}
-
-.tm-facts dt {
-  margin: 0;
-  font-weight: 700;
-  color: var(--c-text-muted, #64748b);
-}
-
-.tm-facts dd {
-  margin: 0;
-}
-
-@media (max-width: 560px) {
-  .tm-facts div {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-  }
 }
 
 .tm-colec-tools {
@@ -170,7 +156,8 @@
   outline-offset: 1px;
 }
 
-.tm-chip {
+.tm-chip,
+.tm-btn-sec {
   appearance: none;
   border: 1px solid #7dd3fc;
   background: #fff;
@@ -189,38 +176,6 @@
   color: #fff;
 }
 
-.tm-colec-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tm-colec-actions a,
-.tm-colec-actions button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  border-radius: 999px;
-  padding: 0.45rem 0.85rem;
-  font: inherit;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  border: 0;
-}
-
-.tm-btn-wa {
-  background: #128c7e;
-  color: #fff;
-}
-
-.tm-btn-sec {
-  background: #fff;
-  color: #0c4a6e;
-  border: 1px solid #7dd3fc !important;
-}
-
 .tm-colec-next {
   margin: 0.35rem 0 0;
   font-size: 0.82rem;
@@ -233,10 +188,7 @@
   font-weight: 700;
 }
 
-.tabla-colectivos tr.tm-row-hide {
-  display: none;
-}
-
+.tabla-colectivos tr.tm-row-hide,
 .colectivos-empresa.tm-dest-hide {
   display: none;
 }
@@ -262,41 +214,14 @@
   font-weight: 700;
 }
 
-.tm-map-filters a:hover,
-.tm-map-filters a:focus-visible {
-  border-color: rgba(27, 163, 212, 0.5);
-  outline: none;
+.tm-fest-meta {
+  margin: 0.75rem 0 0;
 }
 
-.tm-lang {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-left: 0.5rem;
-  list-style: none;
-}
-
-.tm-lang button {
-  appearance: none;
-  border: 1px solid rgba(15, 92, 58, 0.35);
-  background: #fff;
-  color: var(--c-primary-dark, #0f5c3a);
-  border-radius: 999px;
-  padding: 0.25rem 0.55rem;
-  font: inherit;
-  font-size: 0.72rem;
+.tm-fest-meta a {
+  font-size: 0.9rem;
   font-weight: 700;
-  cursor: pointer;
-}
-
-.tm-lang button.is-active {
-  background: var(--c-primary-dark, #0f5c3a);
-  border-color: var(--c-primary-dark, #0f5c3a);
-  color: #fff;
-}
-
-.nav-menu .tm-ext-link {
-  font-weight: 700;
+  color: var(--c-primary, #1ba3d4);
 }
 
 .tm-footer-extra {
@@ -325,32 +250,16 @@
   outline: none;
 }
 
-.tm-fest-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  margin: 0.75rem 0 0;
-}
-
-.tm-fest-meta a {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--c-primary, #1ba3d4);
-}
-
 .gastro-intro-banner.tm-gastro-ok {
   background: linear-gradient(135deg, #ecfdf5, #d1fae5);
   border-color: #6ee7b7;
 }
 
-.tm-card-wa {
-  display: inline-flex;
-  margin-top: 0.45rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #128c7e;
-  text-decoration: none;
+/* Evitar que el menú se corte: el clima puede achicarse */
+@media (max-width: 1200px) {
+  .clima-widget span:last-child {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -360,7 +269,6 @@
 }
 
 body.modo-alto-contraste .tm-quick,
-body.modo-alto-contraste .tm-facts,
 body.modo-alto-contraste .tm-colec-tools {
   background: #000;
   border-color: #fff;
@@ -369,6 +277,7 @@ body.modo-alto-contraste .tm-colec-tools {
 
 body.modo-alto-contraste .tm-quick-link,
 body.modo-alto-contraste .tm-chip,
+body.modo-alto-contraste .tm-lang-btn,
 body.modo-alto-contraste .tm-map-filters a {
   background: #000;
   color: #fff;
