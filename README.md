@@ -2,6 +2,17 @@
 
 Sitio web turístico de **Jardín América, Misiones, Argentina**. Promociona atractivos naturales, circuitos, alojamientos y actividades de la ciudad.
 
+## Mejoras recientes (2026)
+
+Sin tocar el panel de accesibilidad existente:
+
+- Accesos rápidos “¿Qué necesitás hoy?”
+- Datos prácticos en Saltos del Tabay
+- Colectivos con filtro, búsqueda, próximos de hoy y WhatsApp Turismo
+- Gastronomía / paradas con contactos reales del circuito
+- Atajos del mapa, calendario con enlace a eventos, folleto y portal
+- Idioma ES / PT (textos clave de las nuevas capas)
+
 ## Demo en vivo
 
 **[enzomantay-del.github.io/jardin-america-turismo](https://enzomantay-del.github.io/jardin-america-turismo/)**
