@@ -8,7 +8,16 @@
 (function () {
   "use strict";
 
-  var PORTAL_URL = "https://enzomantay-del.github.io/portal-municipal-jardin-america/";
+  // Mismo dominio (jardinamerica.gob.ar) o fallback al portal en GitHub Pages
+  var PORTAL_URL = (function () {
+    try {
+      if (/jardinamerica\.gob\.ar$/i.test(window.location.hostname)) return "/";
+      if (/github\.io$/i.test(window.location.hostname) && /\/turismo\/?/i.test(window.location.pathname)) {
+        return "/portal-municipal-jardin-america/";
+      }
+    } catch (_e) {}
+    return "/";
+  })();
   var PORTAL_TURISMO = PORTAL_URL + "area.html?area=turismo";
 
   var GASTRO_REAL = [
